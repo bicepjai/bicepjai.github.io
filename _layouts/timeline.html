@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<div>
+
+<ul class="timeline">
+  {% for page in site.pages %}
+
+    {% capture cycling_timeline_inverted_class %}
+      {% cycle '','timeline-inverted' %}
+    {% endcapture %}
+
+    {% if page.type == 'timeline-entry' %}
+      <li class={{ cycling_timeline_inverted_class }}>
+        <div class="timeline-badge">{{ page.date | date: '%Y' }}</div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h4 class="timeline-title">
+                <a href="{{ page.title-link }}" target="_blank">
+                {{ page.title }}
+              </a>
+            </h4>
+          </div>
+          <div class="timeline-body">
+            <small>
+              <p><b>{{ page.subtitle }}</b><p>
+              <p> {{ page.bodytext }}</p>
+            </small>
+          </div>
+        </div>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+</div>
