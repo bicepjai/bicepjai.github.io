@@ -8,7 +8,7 @@ twitter_username: bicepjai
 github_username: bicepjai
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown
 markdown_ext:  markdown,mkdown,mkdn,mkd,md
 
 redcarpet:
