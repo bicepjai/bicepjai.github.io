@@ -79,10 +79,23 @@ layout: default
             {% endif %}
 
             {% if page.line5-link == blank or page.line5-link == nil %}
-              {{ page.line5 }}</p>
+              {{ page.line5 }}
             {% else %}
               <a href="{{ page.line5-link }}" target="_blank">
-                {{ page.line5 }}</p>
+                {{ page.line5 }}
+              </a>
+            {% endif %}
+
+            {% if page.line5 == blank or page.line5 == nil %}
+            {% else %}
+              </br>
+            {% endif %}
+
+            {% if page.line6-link == blank or page.line6-link == nil %}
+              {{ page.line6 }}
+            {% else %}
+              <a href="{{ page.line6-link }}" target="_blank">
+                {{ page.line6 }}
               </a>
             {% endif %}
 
