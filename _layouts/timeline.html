@@ -5,7 +5,7 @@ layout: default
 <div>
 
 <ul class="timeline">
-  {% for page in site.pages %}
+  {% for page in site.pages reversed %}
 
     {% capture cycling_timeline_inverted_class %}
       {% cycle '','timeline-inverted' %}
