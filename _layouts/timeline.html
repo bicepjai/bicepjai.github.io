@@ -15,92 +15,34 @@ layout: default
       <li class={{ cycling_timeline_inverted_class }}>
         <div class="timeline-badge">{{ page.date | date: '%Y' }}</div>
         <div class="timeline-panel">
-          <div class="timeline-heading">
-            <h4 class="timeline-title">
-                <a href="{{ page.title-link }}" target="_blank">
-                {{ page.title }}
-              </a>
-            </h4>
-          </div>
-          <div class="timeline-body">
-            <b><p>{{ page.subtitle }}</p></b>
-            <small>
 
-            {% if page.line1-link == blank or page.line1-link == nil %}
-              {{ page.line1 }}
-            {% else %}
-              <a href="{{ page.line1-link }}" target="_blank">
-                {{ page.line1 }}
-              </a>
-            {% endif %}
+          {% for topic in page.topics %}
+            <div class="timeline-heading">
+              <h4 class="timeline-title">
+                  <a href="{{ page.title-link }}" target="_blank">
+                  {{ topic.title }}
+                </a>
+              </h4>
+            </div>
 
-            {% if page.line1 == blank or page.line1 == nil %}
-            {% else %}
-              </br>
-            {% endif %}
+            <div class="timeline-body">
+              <b><p>{{ topic.subtitle }}</p></b>
+              <small>
+                {% for item in topic.items %}
+                  {% if item.link == blank or item.link == nil or item.link == "" %}
+                    {{ item.name }}
+                  {% else %}
+                    <a href="{{ item.link }}" target="_blank">
+                      {{ item.name }}
+                    </a>
+                  {% endif %}
+                  </br>
+                {% endfor %}
+              </small>
+            </div>
+            <br/>
+          {% endfor %}
 
-            {% if page.line2-link == blank or page.line2-link == nil %}
-              {{ page.line2 }}
-            {% else %}
-              <a href="{{ page.line2-link }}" target="_blank">
-                {{ page.line2 }}
-              </a>
-            {% endif %}
-
-            {% if page.line2 == blank or page.line2 == nil %}
-            {% else %}
-              </br>
-            {% endif %}
-
-            {% if page.line3-link == blank or page.line3-link == nil %}
-              {{ page.line3 }}
-            {% else %}
-              <a href="{{ page.line3-link }}" target="_blank">
-                {{ page.line3 }}
-              </a>
-            {% endif %}
-
-            {% if page.line3 == blank or page.line3 == nil %}
-            {% else %}
-              </br>
-            {% endif %}
-
-            {% if page.line4-link == blank or page.line4-link == nil %}
-              {{ page.line4 }}
-            {% else %}
-              <a href="{{ page.line4-link }}" target="_blank">
-                {{ page.line4 }}
-              </a>
-            {% endif %}
-
-            {% if page.line4 == blank or page.line4 == nil %}
-            {% else %}
-              </br>
-            {% endif %}
-
-            {% if page.line5-link == blank or page.line5-link == nil %}
-              {{ page.line5 }}
-            {% else %}
-              <a href="{{ page.line5-link }}" target="_blank">
-                {{ page.line5 }}
-              </a>
-            {% endif %}
-
-            {% if page.line5 == blank or page.line5 == nil %}
-            {% else %}
-              </br>
-            {% endif %}
-
-            {% if page.line6-link == blank or page.line6-link == nil %}
-              {{ page.line6 }}
-            {% else %}
-              <a href="{{ page.line6-link }}" target="_blank">
-                {{ page.line6 }}
-              </a>
-            {% endif %}
-
-            </small>
-          </div>
         </div>
       </li>
     {% endif %}
