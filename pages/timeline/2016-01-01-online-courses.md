@@ -11,8 +11,6 @@ topics:
       link: "https://www.coursera.org/specializations/scala"
     - name: " *Master Algorithmic Programming Techniques"
       link: "https://www.coursera.org/specializations/data-structures-algorithms"
-    - name: " *Advanced Data Structures in Java"
-      link: "https://www.coursera.org/learn/advanced-data-structures/home/welcome"
     - name: " *BerkeleyX: CS188x_1 Artificial Intelligence"
       link: "https://courses.edx.org/courses/BerkeleyX/CS188x_1/1T2013/info"
     - name: " Stanford CS231n"
