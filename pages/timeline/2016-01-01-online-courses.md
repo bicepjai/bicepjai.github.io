@@ -9,7 +9,7 @@ topics:
       link: "http://web.arc.losrios.edu/catalog/MathandStats.pdf"
     - name: " *Program on a Higher/Functional Level"
       link: "https://www.coursera.org/specializations/scala"
-    - name: " *Master Algorithmic Programming Techniques"
+    - name: " *Master Algorithmic Programming Techniques (2/6)"
       link: "https://www.coursera.org/specializations/data-structures-algorithms"
     - name: " *BerkeleyX: CS188x_1 Artificial Intelligence"
       link: "https://courses.edx.org/courses/BerkeleyX/CS188x_1/1T2013/info"
