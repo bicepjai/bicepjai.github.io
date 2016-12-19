@@ -7,9 +7,9 @@ date: 2016-11-06
 categories: algorithms
 ---
 
-The task was simple, create suffix tree from scratch using simple quadratic algorithm. I under estimated the task and it took 13.5 hours of my busy week. When i was looking around for hints, i could not find a proper explanation on this topic but could find algorithms explanation for harder linear time algorithms. So i thought lets help easing the task for future quadratic-suffix-tree algorithm enthusiasts.
+The task was simple, create suffix tree from scratch using a simple quadratic algorithm. I under estimated the task and it took 13.5 hours of my busy week. When i was looking around for hints, i could not find a proper explanation on this topic but could find algorithms explanation for harder linear time algorithms. So i thought lets help easing the task for future quadratic-suffix-tree algorithm enthusiasts.
 
-Ok read up on [TRIE](https://en.wikipedia.org/wiki/Trie) before moving on. There are awful lot of interesting and good materials online about this algorithm. google is your friend here. Then read up on [SUFFIX TREE](https://en.wikipedia.org/wiki/Suffix_tree) enough to understand that the task is to build a (suffix) tree, tree made up suffixes. Hope you know what suffix is ?
+Ok read up on [TRIE](https://en.wikipedia.org/wiki/Trie) before moving on. There are awful lot of interesting and good materials online about this algorithm. Google is your friend here. Then read up on [SUFFIX TREE](https://en.wikipedia.org/wiki/Suffix_tree) enough to understand that the task is to build a (suffix) tree, tree made up suffixes. Hope you know what suffix is ?
 
 Ok, I think by now you should know this task involves building a tree that has nodes and edges; there is always a root node; there is this special character (say \\$) you have to use to define the ending of string (figure out why); then nodes are the one decides which edge to branch to; leaf nodes always has the incoming branch with string containing character \$; the edges are the structures that really has the string in it.
 
