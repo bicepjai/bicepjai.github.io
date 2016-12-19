@@ -34,7 +34,7 @@ Lets get into the algorithm itself. This code builds the suffix tree using quadr
 |$|
 
 
-We are going to storing the string on the edges in a very efficient way with a pair starting index and length of the string on the edge. Remember there is only one string and we are trying to build a tree from its suffixes. Here we are assuming the string is gonna contain just 4 characters, easily extended for many the characters.
+We are going to storing the string on the edges in a very efficient way as a pair starting index and length of the string on the edge. Remember there is only one string and we are trying to build a tree from its suffixes. Here we are assuming the string is gonna contain just 4 characters, easily extended for many the characters.
 This code is in java and lets start building stuff.
 
 Lets create an Edge class that will hold the strings
@@ -370,7 +370,6 @@ are all commented out, but these help in viewing the process of building the tre
                         }
                      }
                      continue;
-
                   }
                   // at this point there are more texts to be traversed
                   // and but the edge string matches only some, we need to handle
@@ -428,7 +427,6 @@ are all commented out, but these help in viewing the process of building the tre
                      sftree.put(sftree_size, new_suffix_leaf_node);
                      sftree_size++;
 
-
                      // update next_node edge to point to new suffix edge ending with a tail node
                      next_node.edges[new_suffix_acgt_i].next_node_i = new_suffix_leaf_node.sftree_i;
                      next_node.edges[new_suffix_acgt_i].start_i = new_suffix_s;
@@ -470,7 +468,6 @@ are all commented out, but these help in viewing the process of building the tre
                   // and deal with new suffix
                   break;
                }
-
             }
             // node doesn't exist if node.next index is -1
             // add the suffix and move on to the next suffix
