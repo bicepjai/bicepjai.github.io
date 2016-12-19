@@ -11,7 +11,7 @@ The task was simple, create suffix tree from scratch using simple quadratic algo
 
 Ok read up on [TRIE](https://en.wikipedia.org/wiki/Trie) before moving on. There are awful lot of interesting and good materials online about this algorithm. google is your friend here. Then read up on [SUFFIX TREE](https://en.wikipedia.org/wiki/Suffix_tree) enough to understand that the task is to build a (suffix) tree, tree made up suffixes. Hope you know what suffix is ?
 
-Ok, I think by now you should know this task involves building a tree that has nodes and edges; there is always a root node; there is this special character (say \\$) you have to use to define the ending of string (figure out why); then nodes are the one decides which edge to branch to; leaf nodes always has the incoming branch with string containing character \\$; the edges are the structures that really has the string in it.
+Ok, I think by now you should know this task involves building a tree that has nodes and edges; there is always a root node; there is this special character (say \\$) you have to use to define the ending of string (figure out why); then nodes are the one decides which edge to branch to; leaf nodes always has the incoming branch with string containing character \$; the edges are the structures that really has the string in it.
 
 Cool, I am not gonna explain all that, there are so many books and videos that explain them well. I am sure algo enthusiasts would have known [this](https://visualgo.net/suffixtree) site, but still check out the impressive visualization on suffix tree.
 
