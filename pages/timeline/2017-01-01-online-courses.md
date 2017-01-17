@@ -15,7 +15,23 @@ topics:
     - name: " *Master Algorithmic Programming Techniques (4/6)"
       link: "https://www.coursera.org/specializations/data-structures-algorithms"
 
-    - name: " *Reinforcement Learning by David Silver - audit"
+    - name: " *MITx: 6.041x Introduction to Probability"
+      link: "https://courses.edx.org/courses/course-v1:MITx+6.041x_4+1T2017/info"
+
+    - name: " *ColumbiaX: CSMM.102x Machine Learning"
+      link: "https://courses.edx.org/courses/course-v1:ColumbiaX+CSMM.102x+1T2017/info"
+
+    - name: " *ColumbiaX: CSMM.101x Artificial Intelligence (AI)"
+      link: "https://courses.edx.org/courses/course-v1:ColumbiaX+CSMM.101x+1T2017/info"
+
+    - name: " *6.S094: Deep Learning for Self-Driving Cars"
+      link: "http://selfdrivingcars.mit.edu/"
+
+    - name: " *CS 294: Deep Reinforcement Learning, Spring 2017"
+      link: "http://rll.berkeley.edu/deeprlcourse/"
+
+    - name: " Reinforcement Learning by David Silver - audit"
       link: "http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching.html"
+
 date: 2017-01-01
 ---
