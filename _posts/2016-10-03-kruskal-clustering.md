@@ -89,7 +89,7 @@ The following snippet shows code for Union Find Data structure. This uses path c
 
 The following snippet shows the clustering algorithms that uses Kruskal's Algorithm, but takes an input parameter that selects how many clusters are required to be created. This is as simple as not allowing some edges at the end to be added. 
 
-This algorithm computes the largest possible value of d such that the given points can be partitioned into $nof_clusters$ non-empty subsets in such a way that the distance between any two points from different subsets is at least $d$.
+This algorithm computes the largest possible value of d such that the given points can be partitioned into $nof$_$clusters$ non-empty subsets in such a way that the distance between any two points from different subsets is at least $d$.
 
 ```java
    private static double clustering(int[] x, int[] y, int nof_clusters) {
