@@ -496,6 +496,4 @@ are all commented out, but these help in viewing the process of building the tre
    }
 ```
 
-Let me know if you have any questions regarding the code and the procedure, this code has been
-stress tested and also passed against the server hosting the verification of the code. The code
-can be downloaded [here](/images/suffix_tree_quadratic.zip).
+Let me know if you have any questions regarding the code and the procedure, this code has been stress tested and also passed against the server hosting the verification of the code. The code can be downloaded [here](https://github.com/bicepjai/myclasses/tree/master/2017/ucsd-dsa/4-string-algo/week1/suffix_tree).
