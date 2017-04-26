@@ -12,23 +12,26 @@ topics:
     - name: " *FLC: Math 410 - Intro to Linear Algebra"
       link: "http://web.arc.losrios.edu/catalog/MathandStats.pdf"
 
-    - name: " *Master Algorithmic Programming Techniques (4/6)"
-      link: "https://www.coursera.org/specializations/data-structures-algorithms"
+    - name: " *CS224n: Natural Language Processing with Deep Learning"
+      link: "https://web.stanford.edu/class/cs224n/index.html"
+
+    - name: " *oxford-cs-deepnlp-2017"
+      link: "https://github.com/oxford-cs-deepnlp-2017"
 
     - name: " *MITx: 6.041x Introduction to Probability"
       link: "https://courses.edx.org/courses/course-v1:MITx+6.041x_4+1T2017/info"
 
-    - name: " *ColumbiaX: CSMM.102x Machine Learning"
+    - name: " MITx: 18.031x Introduction to Differential Equations"
+      link: "https://courses.edx.org/courses/course-v1:MITx+18.031x+1T2017/info"
+
+    - name: " ColumbiaX: CSMM.102x Machine Learning - audit"
       link: "https://courses.edx.org/courses/course-v1:ColumbiaX+CSMM.102x+1T2017/info"
 
-    - name: " *ColumbiaX: CSMM.101x Artificial Intelligence (AI)"
+    - name: " ColumbiaX: CSMM.101x Artificial Intelligence (AI) - audit"
       link: "https://courses.edx.org/courses/course-v1:ColumbiaX+CSMM.101x+1T2017/info"
 
-    - name: " *6.S094: Deep Learning for Self-Driving Cars"
-      link: "http://selfdrivingcars.mit.edu/"
-
-    - name: " *CS 294: Deep Reinforcement Learning, Spring 2017"
-      link: "http://rll.berkeley.edu/deeprlcourse/"
+    - name: " *Master Algorithmic Programming Techniques (4/6)"
+      link: "https://www.coursera.org/specializations/data-structures-algorithms"
 
     - name: " Reinforcement Learning by David Silver - audit"
       link: "http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching.html"
