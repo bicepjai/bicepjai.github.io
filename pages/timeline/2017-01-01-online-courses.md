@@ -15,7 +15,7 @@ topics:
     - name: " *CS224n: NLP with Deep Learning"
       link: "https://web.stanford.edu/class/cs224n/index.html"
 
-    - name: " *oxford-cs-deepnlp-2017"
+    - name: " *Oxford CS DeepNLP 2017"
       link: "https://github.com/oxford-cs-deepnlp-2017"
 
     - name: " *MITx: 6.041x Introduction to Probability"
