@@ -12,7 +12,7 @@ topics:
     - name: " *FLC: Math 410 - Intro to Linear Algebra"
       link: "http://web.arc.losrios.edu/catalog/MathandStats.pdf"
 
-    - name: " *CS224n: Natural Language Processing with Deep Learning"
+    - name: " *CS224n: NLP with Deep Learning"
       link: "https://web.stanford.edu/class/cs224n/index.html"
 
     - name: " *oxford-cs-deepnlp-2017"
