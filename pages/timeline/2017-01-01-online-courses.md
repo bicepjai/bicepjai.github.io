@@ -21,8 +21,11 @@ topics:
     - name: " *MITx: 6.041x Introduction to Probability"
       link: "https://courses.edx.org/courses/course-v1:MITx+6.041x_4+1T2017/info"
 
+    - name: " *CS 20SI: Tensorflow for Deep Learning Research - audit"
+      link: "https://web.stanford.edu/class/cs20si/index.html"
+
     - name: " MITx: 18.031x Introduction to Differential Equations"
-      link: "https://courses.edx.org/courses/course-v1:MITx+18.031x+1T2017/info"
+      link: "https://courses.edx.org/certificates/d8a994752003435880ac6c2aad8ddf12"
 
     - name: " ColumbiaX: CSMM.102x Machine Learning - audit"
       link: "https://courses.edx.org/courses/course-v1:ColumbiaX+CSMM.102x+1T2017/info"
