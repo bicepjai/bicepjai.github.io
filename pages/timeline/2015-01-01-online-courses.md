@@ -7,7 +7,7 @@ topics:
    subtitle: "Research Interest in Machine Learning"
    items:
 
-    - name: "Brown University Coding the Matrix: Linear Algebra"
+    - name: "Brown Univ Coding the Matrix: Linear Algebra"
       link: "https://www.coursera.org/account/accomplishments/verify/UXEQCTAZ9C"
 
     - name: " MITx 15.071x The Analytics Edge"

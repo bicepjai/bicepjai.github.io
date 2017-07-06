@@ -4,4 +4,4 @@ type: navigation
 title: About
 permalink: /about/
 ---
-I am Jayaram Prabhu Durairaj, a software engineer and an avid machine learning aficionado. My journey for Phd has just begun. I have chosen financial domain to try out my upcoming machine learning adventures. Currently getting trained on the finance domain with auditing classes. The timeline you see shows up my current academic and personal project undertakings. When not geeking out, you can find me working out, undertaking clandestine operation in stealth PC games, dancing out, snow boarding or on the quest for knowledge (literally means taking more on-line classes)
+I am Jayaram Prabhu Durairaj, a software engineer and an avid machine learning aficionado. My journey for Phd has just begun. Trying to make both my career and academic endeavors meet. Currently looking into all NLP and Computer Vision courses and papers.

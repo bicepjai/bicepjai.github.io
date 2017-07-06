@@ -27,19 +27,19 @@ topics:
     - name: " MITx: 6.041x Introduction to Probability"
       link: "https://courses.edx.org/certificates/44d98ece56704899b0b17958212310b3"
 
-    - name: " MITx: 18.031x Introduction to Differential Equations"
+    - name: " MITx: 18.031x Intro to Differential Equations"
       link: "https://courses.edx.org/certificates/d8a994752003435880ac6c2aad8ddf12"
 
-    - name: " ColumbiaX: CSMM.102x Machine Learning - audit"
+    - name: " ColumbiaX: CSMM.102x ML - audit"
       link: "https://courses.edx.org/courses/course-v1:ColumbiaX+CSMM.102x+1T2017/info"
 
-    - name: " ColumbiaX: CSMM.101x Artificial Intelligence (AI) - audit"
+    - name: " ColumbiaX: CSMM.101x AI - audit"
       link: "https://courses.edx.org/courses/course-v1:ColumbiaX+CSMM.101x+1T2017/info"
 
     - name: " Reinforcement Learning by David Silver - audit"
       link: "http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching.html"
 
-    - name: " Master Algorithmic Programming Techniques (4/6)"
+    - name: " Master Algo Programming Techniques (4/6)"
       link: "https://www.coursera.org/specializations/data-structures-algorithms"
 
 date: 2017-01-01
