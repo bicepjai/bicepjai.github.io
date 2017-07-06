@@ -1,5 +1,8 @@
+
+
 .timeline {
   list-style: none;
+  font-size: 16px;
   padding: 20px 0 20px;
   position: relative;
 }

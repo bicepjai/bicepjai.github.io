@@ -7,7 +7,7 @@ date: 2015-05-25
 categories: machine-learning
 ---
 
-After completing some Machine Learning Courses (look into my time-line), I decided to build a rig myself to test out the learned algorithms and also work on some more interesting dataset. I am sure everyone who goes through this task of building a rig for Machine Learning would have come across the following blog posts
+I decided to do research on machine-learning myself, but beside many options having a rig yourself saves time, money and has perks if you are into video games. After completing some Machine Learning Courses (look into my time-line), I decided to build a rig myself to test out the learned algorithms and also work on some more interesting dataset. I am sure everyone who goes through this task of building a rig for Machine Learning would have come across the following blog posts
 
   1. Roelof Pieters [Building a Deep Learning (Dream) Machine](http://graphific.github.io/posts/building-a-deep-learning-dream-machine/)
   2. Tim Dettmers [How To Build and Use a Multi GPU System for Deep Learning](http://timdettmers.com/2014/09/21/how-to-build-and-use-a-multi-gpu-system-for-deep-learning/).
@@ -67,7 +67,7 @@ The decision making process on what components depends on how much one can affor
 
 7. #### Graphics Card:
 
-   By the time I was working on this build, PASCAL cards were right around the corner. I didn't want to wait as there is always going to be an upgrade available and we have to learn to live around it. I needed 4 graphics card to complete the rig, but i got just one and decided to wait on the new releases. I got [EVGA GeForce GTX TITAN X 12GB HYBRID GAMING, "All in One" No Hassle Water Cooling, Just Plug and Play Graphics Card 12G-P4-1999-KR](http://www.evga.com/articles/00935/EVGA-GeForce-GTX-TITAN-X-HYBRID/) since i didn't want to deal with water cooling GPUs yet. This was perfect setup for games :) and was also VR ready. Titan X were specifically made for machine learning applications.
+   By the time I was working on this build, PASCAL cards were right around the corner. I didn't want to wait as there is always going to be an upgrade available and we have to learn to live around it. I needed 4 graphics card to complete the rig, but i got just one and decided to wait on the new releases. I got [EVGA GeForce GTX TITAN X 12GB HYBRID GAMING, "All in One" No Hassle Water Cooling, Just Plug and Play Graphics Card 12G-P4-1999-KR](http://www.evga.com/articles/00935/EVGA-GeForce-GTX-TITAN-X-HYBRID/) since i didn't want to deal with water cooling GPUs yet. This was perfect setup for games :) and was also VR ready. Titan X was specifically made for machine learning applications.
 
    |![](/images/ml-rig/gpu-1.jpg){: height="360px" width="320px"}|![](/images/ml-rig/gpu-2.jpg){: height="360px" width="360px"}|
 
@@ -82,5 +82,4 @@ The decision making process on what components depends on how much one can affor
 
 Refer [pcpartpicker](https://pcpartpicker.com/user/bicepjai/saved/#view=8HBXsY) for the list of components and it totally cost around $2500 with just one GPU. If you have questions regarding the build, leave a comment and i will try to help based on my experience.
 
-
-
+Updated July 5 2017: I added another 1080 Ti to the rig

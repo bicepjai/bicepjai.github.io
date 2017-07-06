@@ -15,6 +15,9 @@ topics:
     - name: " *CS 20SI: Tensorflow for Deep Learning Research"
       link: "https://web.stanford.edu/class/cs20si/index.html"
 
+    - name: " *Machine Learning Engineer Nanodegree"
+      link: "https://www.udacity.com/course/machine-learning-engineer-nanodegree--nd009"
+
     - name: " FLC: Math 402 - Calculus III"
       link: "http://web.arc.losrios.edu/catalog/MathandStats.pdf"
 
