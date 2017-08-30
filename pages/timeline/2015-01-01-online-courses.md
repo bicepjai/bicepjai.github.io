@@ -4,7 +4,7 @@ type: timeline-entry
 topics:
  - title: Online Courses
    title-link: ""
-   subtitle: "Research Interest in Machine Learning"
+   subtitle: "Machine Learning Research"
    items:
 
     - name: "Brown Univ Coding the Matrix: Linear Algebra"

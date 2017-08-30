@@ -4,7 +4,7 @@ type: timeline-entry
 topics:
  - title: College/Online Courses & need2code
    title-link: ""
-   subtitle: "Research Interest in Machine Learning"
+   subtitle: "Machine Learning Research"
    items:
 
     - name: " ARC: Math 401 - Calculus II"

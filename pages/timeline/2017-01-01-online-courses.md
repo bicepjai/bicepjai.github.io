@@ -4,7 +4,7 @@ type: timeline-entry
 topics:
  - title: College/Online Courses & need2code
    title-link: ""
-   subtitle: "Research Interest in Machine Learning"
+   subtitle: "Machine Learning Research"
    items:
 
     - name: " *CS224n: NLP with Deep Learning"
@@ -16,7 +16,7 @@ topics:
     - name: " *Machine Learning Engineer Nanodegree"
       link: "https://www.udacity.com/course/machine-learning-engineer-nanodegree--nd009"
 
-    - name: " *CS 20SI: Tensorflow for Deep Learning Research"
+    - name: " *CS 20SI: Tensorflow for DL"
       link: "https://web.stanford.edu/class/cs20si/index.html"
 
     - name: " Reinforcement Learning by David Silver"
