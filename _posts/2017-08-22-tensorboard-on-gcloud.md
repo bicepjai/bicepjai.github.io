@@ -15,7 +15,7 @@ For convenience, these vectors are put together as a matrix and are called [word
 
 There are many methods for representing high dimensional vectors in lower dimensions for viewing and interpretation. A well-known method for converting from higher to lower dimensions is PCA and t-SNE. SKlearn has amazing APIs for them. The following pictures are taken from sklearn documentation. t-SNE is amazing, but its important to know how to use it (you can learn at [distill-pub](https://distill.pub/2016/misread-tsne/)).
 
-|![](/images/tb-gcloud/pca_sklearn_digits.png){: height="360px" width="360px"}|![](/images/tb-gcloud/tsne_sklearn_digits.png){: height="360px" width="360px"}|
+   |![](/images/tb-gcloud/pca_sklearn_digits.png){: height="360px" width="360px"}|![](/images/tb-gcloud/tsne_sklearn_digits.png){: height="360px" width="360px"}|
 
 Ultimately, Google's [tensorboard](https://www.tensorflow.org/get_started/summaries_and_tensorboard) is the best I have come across so far for visualizing word embeddings in 3d. While taking a [CS20si](https://web.stanford.edu/class/cs20si/syllabus.html) course online, the instructors notes/slides/code showed how to use it, and since then I have always viewed embeddings using tensorboard.
 
@@ -31,28 +31,31 @@ I do have to mention tensorflow project [projector.tensorflow](http://projector.
 
    1. Install [gcloud compute tools](https://cloud.google.com/compute/docs/gcloud-compute/) for command line tools. I use ubunutu 16.04 Server for my projects, so my remote and local machines are both ubuntu. Follow the official documentation and make sure to test the command line access to your instance. I have my default instance name as "instance-1". Zone information is important.
 
-   2. Tensorboard runs in the default port 6006. I didn't change it. You have to set up firewall rules for outside words to communicate through the port. Go to the Google cloud console dashboard, which might look like this:
+   2. Tensorboard runs in the default port 6006. I didn't change it. You have to set up firewall rules for outside words to communicate through the port. Go to the Google cloud console dashboard, then select **VPC network** on the sidebar and select **Firewall rules**. Add a rule as mentioned below.
 
-   ![](/images/tb-gcloud/gcloud-dashboard.png)
+      <div class="imgcap">
+      <img src="/images/tb-gcloud/gcloud-firewall.png">
+      </div>
 
-   Then select **VPC network** on the sidebar and select **Firewall rules**. Add a rule as mentioned below.
-
-   ![](/images/tb-gcloud/gcloud-firewall.png)
-
+      <br/>
    3. Now, in the dashboard, click **Compute Engine** in the side bar and it will take you to the page **VM instances**.  Next, click on the instance name, which will take you to the page **VM instance details**. Click on **EDIT** on the top bar.
 
 
       - On this edit page, click the check-box that says **Enable connecting to serial ports**. This will enable you to look at the instance logs using serial connection, which will aid debugging startup scripts and such.
 
-         ![](/images/tb-gcloud/enable-serial.png)
+         <div class="imgcap">
+         <img src="/images/tb-gcloud/enable-serial.png">
+         </div>
 
-
+         <br/>
       - Also, under the **Custom metadata** section, add a key-value item (don’t use quotes there)
 
          * **startup-script** as key
          * **bash /home/< username >/bash_start_tb** as value
          <br/><br/>
-         ![](/images/tb-gcloud/metadata.png)
+         <div class="imgcap">
+         <img src="/images/tb-gcloud/metadata.png">
+         </div>
          <br/><br/>
 
 
@@ -190,7 +193,7 @@ I do have to mention tensorflow project [projector.tensorflow](http://projector.
    2. Issuing `gc_tb_restart` will restart the tensorboard remotely, and hence new data will be rendered.
 
    3. When trying the view the tensorboard on any browser, use http and not https, which is default.
-      **http://< isntance-ip >:6006/**
+      **http://< instance-ip >:6006/**
 
 
 
@@ -198,5 +201,3 @@ That’s it! Just don’t forget to shutdown your instances after usage :)
 Show tensorboard to you friends whose field you are trying to disrupt with machine learning and get them to experience the following equality.
 
 **MIND = BLOWN**
-
-
