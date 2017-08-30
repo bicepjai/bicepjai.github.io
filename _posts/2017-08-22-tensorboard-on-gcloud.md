@@ -200,4 +200,11 @@ I do have to mention tensorflow project [projector.tensorflow](http://projector.
 That’s it! Just don’t forget to shutdown your instances after usage :)
 Show tensorboard to you friends whose field you are trying to disrupt with machine learning and get them to experience the following equality.
 
-**MIND = BLOWN**
+<p style="text-align: center;"><b>MIND = BLOWN</b></p>
+
+<table>
+<tr>
+<td>{% include youtube-player.html id="20jeWYJfInU" %}</td>
+<td>{% include youtube-player.html id="Omw58AtKOlE" %}</td>
+</tr>
+</table>
