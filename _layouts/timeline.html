@@ -7,11 +7,12 @@ layout: default
 <ul class="timeline">
   {% for page in site.pages reversed %}
 
+    {% if page.type == 'timeline-entry' %}
+
     {% capture cycling_timeline_inverted_class %}
       {% cycle '','timeline-inverted' %}
     {% endcapture %}
 
-    {% if page.type == 'timeline-entry' %}
       <li class={{ cycling_timeline_inverted_class }}>
         <div class="timeline-badge">{{ page.date | date: '%Y' }}</div>
         <div class="timeline-panel">

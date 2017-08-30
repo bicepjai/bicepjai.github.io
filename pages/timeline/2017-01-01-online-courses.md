@@ -3,6 +3,7 @@ layout: default
 type: timeline-entry
 topics:
  - title: College/Online Courses & need2code
+   title-link: ""
    subtitle: "Research Interest in Machine Learning"
    items:
 
@@ -12,11 +13,17 @@ topics:
     - name: " *Oxford CS DeepNLP 2017"
       link: "https://github.com/oxford-cs-deepnlp-2017"
 
+    - name: " *Machine Learning Engineer Nanodegree"
+      link: "https://www.udacity.com/course/machine-learning-engineer-nanodegree--nd009"
+
     - name: " *CS 20SI: Tensorflow for Deep Learning Research"
       link: "https://web.stanford.edu/class/cs20si/index.html"
 
-    - name: " *Machine Learning Engineer Nanodegree"
-      link: "https://www.udacity.com/course/machine-learning-engineer-nanodegree--nd009"
+    - name: " Reinforcement Learning by David Silver"
+      link: "http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching.html"
+
+    - name: " fast.ai part:1"
+      link: "http://course.fast.ai/"
 
     - name: " FLC: Math 402 - Calculus III"
       link: "http://web.arc.losrios.edu/catalog/MathandStats.pdf"
@@ -35,9 +42,6 @@ topics:
 
     - name: " ColumbiaX: CSMM.101x AI - audit"
       link: "https://courses.edx.org/courses/course-v1:ColumbiaX+CSMM.101x+1T2017/info"
-
-    - name: " Reinforcement Learning by David Silver - audit"
-      link: "http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching.html"
 
     - name: " Master Algo Programming Techniques (4/6)"
       link: "https://www.coursera.org/specializations/data-structures-algorithms"

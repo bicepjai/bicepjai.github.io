@@ -3,6 +3,7 @@ layout: default
 type: timeline-entry
 topics:
  - title: College/Online Courses & need2code
+   title-link: ""
    subtitle: "Research Interest in Machine Learning"
    items:
 
