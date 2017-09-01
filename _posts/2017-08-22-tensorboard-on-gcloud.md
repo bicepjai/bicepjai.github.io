@@ -23,7 +23,7 @@ After a long period of learning, I joined my first kaggle competition (also MLND
 
 I came across free gcloud instances while completing an assignment for the most awaited course of 2017: [CS231n](http://cs231n.stanford.edu/syllabus.html). I hosted the embeddings there for my friends to view and assess the quality of the embeddings. This system has worked well so far.
 
-I do have to mention tensorflow project [projector.tensorflow](http://projector.tensorflow.org/), on which I can load the meta files to gist and host the embeddings just as I describe in this post. However, I noticed tensorflow project handles 5,000-10,000 words well, but with 50,000 to 100,000 words it frequently crashes. The most anyone can view and process on tensorboard is 100000 words.
+I do have to mention tensorflow project [projector.tensorflow](http://projector.tensorflow.org/), on which one can load the meta files to gist and host the embeddings just as I intend describe in this post. However, I noticed tensorflow project handles 5,000-10,000 words well, but with 50,000 to 100,000 words it frequently crashes on the browser. The most anyone can view and process on tensorboard is 100000 words.
 
 ### Setting up gcloud instance:
 
@@ -66,39 +66,39 @@ I do have to mention tensorflow project [projector.tensorflow](http://projector.
    The following processing is done on the local machine. Lets say we have the vocab list and the embedding matrix and we intend to display 100,000 words. I usually process and save them for this usage.
 
 
-   ```
+   {% highlight python %}
    vocab_words = np.load("vocab_words.npy") # vocab_size > 100000
    word_vectors = np.load("word_vectors.npy") # vector of dimensions (vocab_size, feature_size of vector dimension)
    tb_vocab_size = 10000
-   ```
+   {% endhighlight %}
 
    Tensorboard requires the metafile for vocabulary to be in tsv format. Lets create them. The necessary contents are placed in a directory name `gcloud_tb`
 
-   ```
+   {% highlight python %}
    import csv
    local_tb_dir="./gcloud_tb/"
    with open(local_tb_dir+"/vocab.tsv", "wb") as fp:
       wr = csv.writer(fp, delimiter='\n')
       wr.writerow(vocab_words[:tb_vocab_size])
-   ```
+   {% endhighlight %}
 
    Remote machine path `/home/< username >/projects/tb_visual` is where all the tensorboard metafiles are residing or will be transferred to. The following code snippet creates tensorboard metafiles inside the `gcloud_tb` directory. The `metadata_path` variable holds the path that is valid in a remote machine, which we will set up or update when necessary.
 
-   ```
+   {% highlight python %}
    visualize_this_embedding = word_vectors[:tb_vocab_size]
    print visualize_this_embedding.shape # should be of shape (tb_vocab_size, feature_size of vector dimension)
    metadata_path = "/home/<username>/projects/tb_visual/vocab.tsv"
    visualize_embeddings_in_tensorboard(visualize_this_embedding, metadata_path, local_tb_dir)
 
-   ```
+   {% endhighlight %}
 
    Lets look at the function visualize_embeddings_in_tensorboard,
 
-   ```
+   {% highlight python %}
    import tensorflow as tf
    def visualize_embeddings_in_tensorboard(final_embedding_matrix, metadata_path, dir_path):
        """
-       view the tensors in tensorboarf with PCA/TSNE
+       view the tensors in tensorboard with PCA/TSNE
        final_embedding_matrix: embedding vector
        metadata_path: path to the vocabulary indexing the final_embedding_matrix
        """
@@ -124,25 +124,25 @@ I do have to mention tensorflow project [projector.tensorflow](http://projector.
            saver_embed.save(sess, dir_path+'/visual_embed.ckpt', 1)
 
            visual_summary_writer.close()
-   ```
+   {% endhighlight %}
 
    Now all the required files will be in the directory `gcloud_tb`, but one file `checkpoint` will contain a key value pair referring to paths in the local machine where the above code is run. We have to update them to reflect the paths being setup in the remote machine (which will be discussed later)
 
-   ```
+   {% highlight python %}
    checkpoint_txt = "model_checkpoint_path: \"/home/<username>/projects/tb_visual/visual_embed.ckpt-1\"\n\
    all_model_checkpoint_paths: \"/home/<username>/projects/tb_visual/visual_embed.ckpt-1\""
    with open(local_tb_dir+"/checkpoint","w") as f:
        f.seek(0)
        f.truncate()
        f.write(checkpoint_txt)
-   ```
+   {% endhighlight %}
 
 
 ### Setting up remote and local scripts:
 
    I have some handy bash aliases for executing command line arguments. Put these in your local machine bash profile file and source them.
 
-   ```
+   {% highlight bash %}
    #serve tensorboard on google computer
    alias gclogin="gcloud compute ssh --zone=us-west1-b instance-1"
    alias gcserial="gcloud compute connect-to-serial-port instance-1"
@@ -152,7 +152,7 @@ I do have to mention tensorflow project [projector.tensorflow](http://projector.
    }
    alias gc_tb_update="gc_tb_clean && gc_tb_scp"
    alias gc_tb_restart="gcloud compute ssh <username>@instance-1 --command 'bash /home/<username>/bash_restart_tb &'"
-   ```
+   {% endhighlight %}
 
    1. Start the instance and on a terminal immediately execute `gclogin`. Wait while it logs in. This needs to be set up before we execute any more commands on the terminal for gcloud instance.
 
@@ -164,23 +164,21 @@ I do have to mention tensorflow project [projector.tensorflow](http://projector.
       This should be fairly easy. Usually, I prefer creating a software folder named `programs`.
 
    5. Create `bash_start_tb` bash script. This is the one we put in the gcloud **Custom metadata** section. This will be called during start up and you can use the serial connection terminal window started above to debug any issues.
-      ```
+      {% highlight bash %}
       #! /bin/bash
 
       export PATH="/home/<username>/programs/anaconda2/bin:$PATH"
       source /home/<username>/programs/anaconda2/envs/tensorboard/bin/activate tensorboard
       /home/<username>/programs/anaconda2/bin/tensorboard --logdir=/home/<username>/projects/tb_visual --port=6006 &
-
-      ```
+      {% endhighlight %}
 
    5. Create another script called `bash_restart_tb`. This can be used to restart tensorboard if there are issues or after we have new data uploaded for rendering.
-      ```
+      {% highlight bash %}
       #! /bin/bash
 
       for pid in $(ps -ef | grep "tensorboard.py --logdir" | awk '{print $2}'); do sudo kill -9 $pid; done;
       bash /home/<username>/bash_start_tb
-
-      ```
+      {% endhighlight %}
 
 
 ### Update Tensorboard at will:
@@ -208,3 +206,7 @@ Show tensorboard to you friends whose field you are trying to disrupt with machi
 <td>{% include youtube-player.html id="Omw58AtKOlE" %}</td>
 </tr>
 </table>
+
+Let me know if you have any questions !
+and please do correct me if somethings are off !
+
