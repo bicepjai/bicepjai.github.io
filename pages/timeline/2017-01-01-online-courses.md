@@ -10,7 +10,7 @@ topics:
     - name: " *Statistics With R"
       link: "https://www.coursera.org/specializations/statistics"
 
-    - name: " *Machine Learning Engineer Nanodegree"
+    - name: " Machine Learning Engineer Nanodegree"
       link: "https://www.udacity.com/course/machine-learning-engineer-nanodegree--nd009"
 
     - name: " CS224n: NLP with Deep Learning"
