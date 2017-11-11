@@ -341,12 +341,10 @@ doc_output_layer = Dense(9, activation="softmax")(l_dropout){% endhighlight %}
 
 Keras model summary and complete code can be found [here](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_05_racnn)
 <br/>
-<<<<<<< HEAD
 
 ****
 <a style="font-size: 20px; text-decoration: none" href="#top">top</a>
 
-=======
 ### RACNN Neural Networks for Text Classification
 
 [Ye Zhang et al](https://arxiv.org/abs/1605.04469) presents RA-CNN model that jointly exploits labels on documents and their constituent sentences. The model tries to estimate the probability that a given sentence is rationales and then scale the contribution of each sentence to aggregate a document representation in proportion to the estimates. Rationales are sentences that directly support document classification.
