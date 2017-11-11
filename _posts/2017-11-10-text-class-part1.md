@@ -441,7 +441,6 @@ Johnson et al (2015 and 2016) [paper1](https://arxiv.org/pdf/1609.00718.pdf), [p
 [Le et al (2017)](https://arxiv.org/pdf/1707.04108.pdf) studied the importance of depth in convolutional models for text classification and shows that simple shallow and wide networks outperform deep models with text represented as characters.
 
 [Wang et al](http://www.aclweb.org/anthology/P15-2058) proposed using output of semantic clusters and applying a model similar to DCNN on top for document classification.
-
 <br/>
 
 ****
