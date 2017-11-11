@@ -43,9 +43,11 @@ $on-laptop:        700px;
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
-        "layout",
-        "syntax-highlighting"
+        "layout"
 ;
+
+@import url(monokai.css);
+@import url(son-of-obsidian.css);
 
 /* AK custom CSS mods */
 .imgright { float: right; margin-left: 10px; }

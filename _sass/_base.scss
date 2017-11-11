@@ -103,28 +103,18 @@
     pre,
     code {
         font-size: 13px;
-        border: 1px solid $grey-color-light;
-        font-family: Menlo, Monaco, "Andale Mono", serif;
+        font-family: Consolas, Menlo, Monaco, monospace, serif;
     }
 
     code {
-        padding: 1px 3px;
-        background-color: #FFF;
-        border-radius: 5px;
+        padding: 1px 1px;
+        border-radius: 3px;
     }
 
     pre {
-        border-radius: 3px;
-        padding: 8px 12px;
+        border-radius: 5px;
+        padding: 10px 10px 10px 10px;
         overflow-x: scroll;
-        background-color: #F5F5F5;
-
-        > code {
-            background-color: #F5F5F5;
-            border: 0;
-            padding-right: 0;
-            padding-left: 0;
-        }
     }
 
 /* Wrapper
