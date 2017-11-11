@@ -257,6 +257,85 @@ Keras model summary and code for MGCNN can be found [here](https://arxiv.org/abs
 ****
 
 <br/>
+### RACNN Neural Networks for Text Classification
+
+[Ye Zhang et al](https://arxiv.org/abs/1605.04469) presents RA-CNN model that jointly exploits labels on documents and their constituent sentences. The model tries to estimate the probability that a given sentence is rationales and then scale the contribution of each sentence to aggregate a document representation in proportion to the estimates. Rationales are sentences that directly support document classification.
+
+To make the understanding of RA-CNN simpler, authors explain Doc-CNN model. In this model, a CNN model is applied over each sentence in a document and then all the generated sentence level vectors are added to form a document vector. As before, we add a softmax layer to perform document classification. Regularization is applied to both the document and sentence level vector output.
+
+RA-CNN model is same as Doc-CNN but document vector is created as weighted sum of its constituent sentence. There are 2 stages in training this architecture, sentence level training and document level training.
+
+For the former stage, each sentence is provided with 3 classes positive rationales, negative rationales and neutral rationales. Then with a softmax layer parametrized with its own weights (will contain 3 vectors, one for each class) over the sentences, we fit this sub-model to maximize the probabilities of the sentences being one of the rationales class. This would provide the conditional probability estimates regarding whether the sentence is a positive or negative rationale.
+
+For the document level training, the document vector is estimated using the weighted sum of the constituent sentence vectors. The weights are set to the estimated probabilities that corresponding sentences are rationales in the most likely direction. The probabilities considered for the weights are maximum of 2 classes positive and negative rationale (neutral class is omitted). The intuition is that sentences likely to be rationales will have greater influence on the resultant document vector. The final document vector is used to perform classification on the document labels. When performing document level training, we freeze the sentence weights $W_{sen}$ and initialize the embeddings and other conv layer parameters tuned during sentence level training.
+
+<div class="imgcap">
+<img src="https://raw.githubusercontent.com/bicepjai/Deep-Survey-Text-Classification/master/images/paper_05_racnn.png">
+</div>
+<br/>
+
+Lets look at the keras code for RA-CNN
+{% highlight python %}
+doc_input = Input(shape=(MAX_DOC_LEN,MAX_SENT_LEN,), dtype="int32")
+reshape_1d = Reshape([MAX_DOC_LEN * MAX_SENT_LEN])(doc_input)
+doc_embedding_1d = Embedding(vocab_size, WORD_EMB_SIZE, weights=[trained_embeddings], trainable=True)(reshape_1d)
+# data_format='channels_first' for conv2d
+doc_embedding = Reshape([1, MAX_DOC_LEN, MAX_SENT_LEN * WORD_EMB_SIZE])(doc_embedding_1d)
+
+sent_convs_in_doc = []
+ngram_filters = [2,3]
+n_filters = 32 # nof features
+final_doc_dims = len(ngram_filters) * n_filters
+
+# using Conv2D instead of Conv1D since we need to deal with sentences and not the whole document
+# All Input shape: 4D tensor with shape: (samples, channels, rows, cols) if data_format='channels_first'
+for n_gram in ngram_filters:
+    l_conv = Conv2D(filters = n_filters,
+                    kernel_size = (1, n_gram * WORD_EMB_SIZE), # n_gram words
+                    strides = (1, WORD_EMB_SIZE), # one word
+                    data_format='channels_first',
+                    activation="relu")(doc_embedding)
+    # this output (n_filters x max_doc_len x 1)
+    l_pool = MaxPooling2D(pool_size=(1, (MAX_SENT_LEN - n_gram + 1)),
+                       data_format='channels_first')(l_conv)
+
+    # flip around, to get (1 x DOC_SEQ_LEN x n_filters)
+    permuted = Permute((2,1,3)) (l_pool)
+
+    # drop extra dimension
+    reshaped = Reshape((MAX_DOC_LEN, n_filters))(permuted)
+    sent_convs_in_doc.append(reshaped)
+
+sent_vectors = concatenate(sent_convs_in_doc)
+# do we need dropout here, we might lose information
+# l_dropout = Dropout(0.5)(l_concat)
+
+sentence_softmax = Dense(9, activation='softmax', kernel_regularizer=l2(0.01), name="sentence_prediction")
+doc_sent_output_layer = TimeDistributed(sentence_softmax, name="sentence_predictions")(sent_vectors)
+
+# weights are set to the estimated probabilities that
+# corresponding sentences are rationales in the most likely direction
+sum_weighting_probs = Lambda(lambda x: K.max(x, axis=1))
+
+# distributing over sentences in the document
+sent_weights = TimeDistributed(sum_weighting_probs)(doc_sent_output_layer)
+
+# reshaping the weights to perform matrix dot product
+reshaped_sent_weights = Reshape((1, MAX_DOC_LEN))(sent_weights)
+
+# along the last 2 axes and not including the batch axis
+doc_vector = Dot((1,2))([sent_vectors, reshaped_sent_weights])
+doc_vector = Reshape((final_doc_dims,))(doc_vector)
+
+l_dropout = Dropout(0.5)(doc_vector)
+doc_output_layer = Dense(9, activation="softmax")(l_dropout){% endhighlight %}
+
+Keras model summary and complete code can be found [here](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_05_racnn)
+<br/>
+
+****
+
+<br/>
 ### Other Models and Study on CNN methods
 
 
