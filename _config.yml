@@ -12,6 +12,8 @@ markdown: kramdown
 
 kramdown:
   syntax_highlighter: rouge
+gems:
+  - jemoji
 
 redcarpet:
   extensions: ["tables", "autolink", "strikethrough", "space_after_headers", "fenced_code_blocks"]

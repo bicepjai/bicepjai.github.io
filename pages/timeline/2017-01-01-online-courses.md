@@ -7,6 +7,9 @@ topics:
    subtitle: "Machine Learning Research"
    items:
 
+    - name: " *CS231n 2017"
+      link: "http://cs231n.stanford.edu/index.html"
+
     - name: " *Statistics With R"
       link: "https://www.coursera.org/specializations/statistics"
 
