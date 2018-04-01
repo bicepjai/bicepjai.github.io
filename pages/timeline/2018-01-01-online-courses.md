@@ -10,6 +10,9 @@ topics:
     - name: " *Statistical Rethinking"
       link: "http://xcelab.net/rm/statistical-rethinking/"
 
+    - name: " *Probabilistic Graphical Models"
+      link: "https://www.coursera.org/learn/probabilistic-graphical-models"
+
     - name: " Reinforcement Learning (Microsoft)"
       link: "https://www.edx.org/course/reinforcement-learning-explained"
 
