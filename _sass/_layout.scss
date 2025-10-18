@@ -1,22 +1,41 @@
 /* Site Header
  * ============================================== */
     .site-header {
-        height: 55px;
-        background-color: #F5F5F5;
+        min-height: 55px;
+        background-color: #1e2939;
         position: relative;
         width: 100%;
+        border-bottom: 1px solid $brand-color;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 1em 2em;
     }
 
     .site-header a {color: $brand-color};
 
+    .site-tagline {
+        color: $accent-cyan;
+        font-style: normal;
+        font-size: 24px;
+        font-family: $base-font-family;
+        padding-top: 2px;
+        font-weight: bold;
+    }
+
     .site-nav {
-        padding-top: 16px;
-        float: right;
-        margin-right: 25px;
+        padding-top: 0;
         text-transform: uppercase;
 
         .menu-icon {
             display: none;
+        }
+
+        .trigger {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            align-items: center;
         }
 
         @include media-query($on-palm) {
@@ -58,11 +77,8 @@
             font-weight: 700 !important;
             line-height: $base-line-height;
             letter-spacing: 0.05em;
-
-
-            &:not(:first-child) {
-                    margin-left: 20px;
-            }
+            white-space: nowrap;
+            flex-shrink: 0;
 
             &:hover {
                 opacity: 0.8
@@ -99,8 +115,10 @@
     }
 
     .site-footer {
-      border-top: 1px solid #e8e8e8;
+      border-top: 1px solid $brand-color;
       padding: 30px 0;
+      background-color: #1e2939;
+      flex-shrink: 0;
     }
 
     .footer-heading {
@@ -142,7 +160,7 @@
     .site-footer p {
       font-size: 15px;
       letter-spacing: -.3px;
-      color: #828282;
+      color: $text-color;
     }
 
     .github-icon-svg,
@@ -160,22 +178,53 @@
     .page-content {
         padding: $spacing-unit 0;
         text-align: justify;
+        flex: 1 0 auto;
     }
 
     .page-heading {
-        font-size: 20px;
+        font-family: 'Open Sans';
+        font-weight: 300;
+        font-size: 1.5em;
+        letter-spacing: -1px;
         padding-top: 2px;
     }
 
 /* Archive
  * ============================================== */
+    .home {
+        padding: 0;
+    }
+
+    .posts-container {
+        background-color: #0a0a0a;
+        border: 1px solid rgba(189, 147, 249, 0.2);
+        border-radius: 8px;
+        padding: 1.5em;
+    }
+
+    .year-heading {
+        font-family: 'Open Sans';
+        font-weight: bold;
+        font-size: 1.5em;
+        letter-spacing: -1px;
+        color: #ffffff;
+        margin-top: 0;
+        margin-bottom: 0.5em;
+    }
+
+    .year-heading:not(:first-child) {
+        margin-top: 1.5em;
+    }
+
     .post-list {
-        margin-left: 0;
-        list-style: none;
+        margin-left: 2em;
+        list-style: decimal;
+        counter-reset: item;
 
         > li {
-            display: block;
-            padding: 0.1em 1.5em;
+            display: list-item;
+            padding: 0.3em 0;
+            margin-bottom: 0.5em;
         }
 
     }
@@ -185,7 +234,7 @@
         font-weight: 300;
         font-size: 1.5em;
         letter-spacing: -1px;
-        color: #454545;
+        color: $accent-cyan;
         display: block;
         width: 100%;
 
@@ -205,14 +254,23 @@
  * ============================================== */
     .post-header {
         margin-bottom: $spacing-unit;
+        padding: 1.5em;
+        background-color: #0a0a0a;
+        border: 1px solid rgba(189, 147, 249, 0.2);
+        border-radius: 8px;
     }
 
     .post-title {
         font-size: 42px;
         letter-spacing: -1px;
         line-height: 1;
+        color: #53eafd;
     }
 
     .post-content {
         margin-bottom: $spacing-unit;
+        padding: 1.5em;
+        background-color: #0a0a0a;
+        border: 1px solid rgba(189, 147, 249, 0.2);
+        border-radius: 8px;
     }

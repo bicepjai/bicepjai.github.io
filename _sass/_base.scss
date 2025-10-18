@@ -9,6 +9,10 @@
 
 /* Basic Styling
  * ============================================== */
+    html {
+        height: 100%;
+    }
+
     body {
         font-family: $base-font-family;
         font-size: $base-font-size;
@@ -17,6 +21,27 @@
         color: $text-color;
         background-color: $background-color !important;
         -webkit-text-size-adjust: 100%;
+        position: relative;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Simple Matrix background pattern */
+    body::before {
+        content: "0 1 0 1 0 1 0 1 0 1 カ タ カ ナ 0 1 0 1 0 1 0 1 0 1 カ タ カ ナ 0 1 0 1 0 1 0 1 0 1 カ タ カ ナ";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 20px;
+        line-height: 1.5;
+        color: rgba(0, 255, 65, 0.05);
+        word-wrap: break-word;
+        z-index: -1;
+        pointer-events: none;
+        overflow: hidden;
     }
 
 /* Set Margin Bottom for Vertical Rhythm
@@ -25,7 +50,11 @@
     p, blockquote, pre,
     ul, ol, dl, figure,
     %vertical-rhythm {
-        margin-bottom: $spacing-unit / 2;
+        margin-bottom: $spacing-unit / 1.5;
+    }
+
+    p {
+        margin-bottom: 1.5em;
     }
 
 /* Images and Figures

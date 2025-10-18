@@ -3,18 +3,23 @@
 @charset "utf-8";
 
 // Our variables
-$base-font-family: 'PT Sans', Helvetica, Arial, sans-serif;
-$base-font-size:   18px;
+$base-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+$base-font-size:   1.125rem;
 $small-font-size:  $base-font-size * 0.895;
 $large-font-size:  $base-font-size * 1.40;
 
-$base-line-height: 1.5;
+$base-line-height: 1.75;
 
 $spacing-unit:     30px;
 
-$text-color:       #454545;
-$background-color: #FFF;
-$brand-color:      #00B2EE;
+// Custom dark theme colors
+$background-color: #101828;  // Body background
+$text-color:       #f8f8f2;  // Light text
+$brand-color:      #bd93f9;  // Purple accent
+$accent-green:     #50fa7b;  // Green accent
+$accent-pink:      #ff79c6;  // Pink accent
+$accent-cyan:      #8be9fd;  // Cyan accent
+$header-footer-bg: #1e2939;  // Header/Footer background
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 30%);

@@ -3,19 +3,19 @@ layout: default
 ---
 
 <div class="home">
+  <div class="posts-container">
+    {% assign postsByYear = site.posts | where: "type", "blog" | group_by_exp: "post", "post.date | date: '%Y'" %}
 
-  <h1 class="page-heading">{{ site.title }}</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      {% if post.type == 'blog' %}
-      <li>
-        <!-- <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span> -->
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
-      {% endif %}
+    {% for year in postsByYear %}
+      <h2 class="year-heading">{{ year.name }}</h2>
+      <ol class="post-list">
+        {% for post in year.items %}
+          <li>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </li>
+        {% endfor %}
+      </ol>
     {% endfor %}
-  </ul>
-
+  </div>
 </div>
 
