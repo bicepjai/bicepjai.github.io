@@ -177,7 +177,7 @@
  * ============================================== */
     .page-content {
         padding: $spacing-unit 0;
-        text-align: justify;
+        text-align: left;
         flex: 1 0 auto;
     }
 
@@ -236,7 +236,6 @@
         letter-spacing: -1px;
         color: $accent-cyan;
         display: block;
-        width: 100%;
 
         @include media-query($on-palm) {
             font-size: 1.33em;
