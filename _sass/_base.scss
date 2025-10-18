@@ -188,13 +188,13 @@
     }
 
     :not(.highlight)>table tr {
-        background-color: #fff;
-        border-top: 1px solid #ccc
+        background-color: rgba(255, 255, 255, 0.05);
+        border-top: 1px solid rgba(189, 147, 249, 0.2)
     }
 
     :not(.highlight)>table tr th, :not(.highlight)>table tr td {
         padding: 6px 13px;
-        border: 1px solid #ddd
+        border: 1px solid rgba(189, 147, 249, 0.2)
     }
 
     :not(.highlight)>table tr th {
@@ -202,5 +202,5 @@
     }
 
     :not(.highlight)>table tr:nth-child(2n) {
-        background-color: #f8f8f8
+        background-color: rgba(255, 255, 255, 0.08)
     }
