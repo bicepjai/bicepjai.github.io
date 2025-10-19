@@ -55,3 +55,7 @@ Civil disobeince had more effect in obtaining India its independance than the vi
 Civil Rights Movement could be the single most significant reason why US has Civil Rights Act of 1964. 
 
 We can even cite wars that ended just because of people observed the suffering long enough. That is one thing I had to note, experiencing suffering makes you act faster than observing suffering. Though observing suffering help syou empathize and brings about the change, it takes time and many people are probably going thru some of that now.
+
+### Conclusion
+
+Now that i know observing suffering brings about profound changes than experiencing one, how do I help my kids ? I dont want to figure out how much exact sufferring i have to bring about to my partment to have profound transformation in my kid. I think simulated sufferring and discussin them with the kids could help them think about what empathy is. Books that show case suffering and how it brough about change could be game changer for our future generation.
