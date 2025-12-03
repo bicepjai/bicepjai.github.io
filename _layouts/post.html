@@ -5,7 +5,7 @@ layout: default
 
   <header class="post-header">
      <h1 class="post-title">{{ page.title }}</h1>
-     <p class="post-meta">Posted on {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+     <p class="post-meta" style="margin-top: 2em;">Posted on {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
   </header>
 
   <article class="post-content">
@@ -20,7 +20,7 @@ layout: default
 
 
   <!-- disqus comments -->
- {% if page.comments %}
+ <!-- {% if page.comments %}
  <div id="disqus_thread"></div>
   <script type="text/javascript">
       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -34,6 +34,6 @@ layout: default
   </script>
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-  {% endif %}
+  {% endif %} -->
 
 </div>
