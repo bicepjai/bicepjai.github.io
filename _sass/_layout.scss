@@ -31,6 +31,75 @@
         padding-right: 1em;
     }
 
+    .matrix-switch {
+        position: relative;
+        display: inline-block;
+        width: 36px;
+        height: 20px;
+        margin-left: 0.8em;
+        vertical-align: middle;
+        cursor: pointer;
+
+        input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .matrix-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #333;
+            border: 1px solid $brand-color;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+
+            &:before {
+                position: absolute;
+                content: "";
+                height: 14px;
+                width: 14px;
+                left: 2px;
+                bottom: 2px;
+                background-color: $brand-color;
+                border-radius: 50%;
+                transition: all 0.3s ease;
+            }
+        }
+
+        input:checked + .matrix-slider {
+            background-color: rgba(0, 255, 65, 0.3);
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+
+            &:before {
+                transform: translateX(16px);
+                box-shadow: 0 0 8px rgba(0, 255, 65, 0.8);
+            }
+        }
+
+        &:hover .matrix-slider {
+            box-shadow: 0 0 8px rgba(0, 255, 65, 0.3);
+        }
+
+        @include media-query($on-palm) {
+            width: 30px;
+            height: 16px;
+            margin-left: 0.5em;
+
+            .matrix-slider:before {
+                height: 10px;
+                width: 10px;
+            }
+
+            input:checked + .matrix-slider:before {
+                transform: translateX(14px);
+            }
+        }
+    }
+
     .site-nav {
         text-transform: uppercase;
         flex-shrink: 0;
@@ -218,8 +287,8 @@
     }
 
     .posts-container {
-        background-color: rgba(13, 2, 8, 0.65);
-        border: 1px solid rgba(0, 255, 65, 0.3);
+        background-color: $panel-bg;
+        border: 1px solid $panel-border;
         border-radius: 8px;
         padding: 1.5em;
         backdrop-filter: blur(5px);
@@ -276,8 +345,8 @@
     .post-header {
         margin-bottom: $spacing-unit;
         padding: 1.5em;
-        background-color: rgba(13, 2, 8, 0.65);
-        border: 1px solid rgba(0, 255, 65, 0.3);
+        background-color: $panel-bg;
+        border: 1px solid $panel-border;
         border-radius: 8px;
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
@@ -293,8 +362,8 @@
     .post-content {
         margin-bottom: $spacing-unit;
         padding: 1.5em;
-        background-color: rgba(13, 2, 8, 0.85);
-        border: 1px solid rgba(0, 255, 65, 0.3);
+        background-color: $panel-bg;
+        border: 1px solid $panel-border;
         border-radius: 8px;
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);

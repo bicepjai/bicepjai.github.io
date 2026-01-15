@@ -1,5 +1,11 @@
 <div class="site-header">
-    <div class="site-tagline">Dreams I Remembered</div>
+    <div class="site-tagline">
+        {{ site.title }}
+        <label class="matrix-switch" title="matrix-me">
+            <input type="checkbox" id="matrix-toggle" onchange="window.MatrixRain.toggle()">
+            <span class="matrix-slider"></span>
+        </label>
+    </div>
 
     <nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />

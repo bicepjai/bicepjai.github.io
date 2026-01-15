@@ -22,6 +22,14 @@ $accent-green:     #00FF41;  // Matrix primary green
 $accent-dim:       #008F11;  // Matrix dim green
 $accent-cyan:      #33FF66;  // Lighter matrix green for links
 $header-footer-bg: rgba(13, 2, 8, 0.95);  // Semi-transparent dark
+$panel-bg:         rgba(17, 17, 17, 0.85);  // Darkest grey panel background
+$panel-border:     rgba(0, 255, 65, 0.3); // Panel border color
+
+// CSS custom properties for use in plain CSS files
+:root {
+  --panel-bg: #{$panel-bg};
+  --panel-border: #{$panel-border};
+}
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 30%);

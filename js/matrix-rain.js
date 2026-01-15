@@ -1,4 +1,5 @@
 // Classic Matrix Digital Rain - Dense curtain style
+// Controllable via toggle button
 (function() {
   'use strict';
 
@@ -10,6 +11,7 @@
   let fontSize = 14;
   let animationId;
   let lastTime = 0;
+  let isRunning = false;
   const frameInterval = 33; // ~30fps instead of 60fps (half speed)
 
   function createCanvas() {
@@ -47,6 +49,8 @@
   }
 
   function draw(timestamp) {
+    if (!isRunning) return;
+
     // Throttle frame rate for slower, cleaner animation
     if (timestamp - lastTime < frameInterval) {
       animationId = requestAnimationFrame(draw);
@@ -116,17 +120,64 @@
   function handleVisibility() {
     if (document.hidden) {
       cancelAnimationFrame(animationId);
-    } else {
+    } else if (isRunning) {
       animationId = requestAnimationFrame(draw);
+    }
+  }
+
+  function start() {
+    if (isRunning) return;
+    isRunning = true;
+    resizeCanvas();
+    animationId = requestAnimationFrame(draw);
+    updateToggle(true);
+    localStorage.setItem('matrixRainEnabled', 'true');
+  }
+
+  function stop() {
+    isRunning = false;
+    cancelAnimationFrame(animationId);
+    // Keep black background, just clear the rain
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    updateToggle(false);
+    localStorage.setItem('matrixRainEnabled', 'false');
+  }
+
+  function toggle() {
+    if (isRunning) {
+      stop();
+    } else {
+      start();
+    }
+  }
+
+  function updateToggle(active) {
+    const toggle = document.getElementById('matrix-toggle');
+    if (toggle) {
+      toggle.checked = active;
     }
   }
 
   function init() {
     createCanvas();
-    animationId = requestAnimationFrame(draw);
     window.addEventListener('resize', handleResize);
     document.addEventListener('visibilitychange', handleVisibility);
+
+    // Check localStorage for saved preference
+    const saved = localStorage.getItem('matrixRainEnabled');
+    if (saved === 'true') {
+      start();
+    }
   }
+
+  // Expose API globally
+  window.MatrixRain = {
+    start: start,
+    stop: stop,
+    toggle: toggle,
+    isRunning: function() { return isRunning; }
+  };
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
