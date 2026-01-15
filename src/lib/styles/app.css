@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+/* Hack Nerd Font via CDN */
+@import url('https://cdn.jsdelivr.net/gh/mshaugh/nerdfont-webfonts@v3.3.0/build/hack-nerd-font-mono.css');
+
+@import 'tailwindcss';
+
+/* Custom theme for Matrix/Terminal aesthetic */
+@theme {
+	--color-matrix-bg: #0d0208;
+	--color-matrix-bg-secondary: #1a1a1a;
+	--color-matrix-green: #00ff41;
+	--color-matrix-green-dim: #008f11;
+	--color-matrix-green-bright: #33ff66;
+	--color-matrix-text-readable: #a8b8a0;
+	--color-terminal-chrome: #2d2d2d;
+
+	--font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+	--font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+
+	--shadow-matrix-glow: 0 0 20px rgba(0, 255, 65, 0.3);
+	--shadow-matrix-glow-sm: 0 0 10px rgba(0, 255, 65, 0.2);
+}
+
+/* Base styles */
+html {
+	background-color: var(--color-matrix-bg);
+	color: var(--color-matrix-green);
+	font-family: var(--font-mono);
+}
+
+body {
+	min-height: 100vh;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+	background-color: var(--color-matrix-green);
+	color: var(--color-matrix-bg);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--color-matrix-bg);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--color-matrix-green-dim);
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--color-matrix-green);
+}
+
+/* Prose styles for blog content */
+.prose-matrix {
+	color: var(--color-matrix-text-readable);
+	font-family: 'Hack Nerd Font Mono', var(--font-mono);
+	font-size: 1.1rem;
+	line-height: 1.6;
+	letter-spacing: 0;
+}
+
+.prose-matrix h1 {
+	font-family: var(--font-mono);
+	color: var(--color-matrix-green);
+	font-size: 1.875rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+	margin-top: 2rem;
+}
+
+.prose-matrix h2 {
+	font-family: var(--font-mono);
+	color: var(--color-matrix-green);
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin-bottom: 0.75rem;
+	margin-top: 1.5rem;
+}
+
+.prose-matrix h3 {
+	font-family: var(--font-mono);
+	color: var(--color-matrix-green);
+	font-size: 1.25rem;
+	font-weight: 500;
+	margin-bottom: 0.5rem;
+	margin-top: 1rem;
+}
+
+.prose-matrix p {
+	margin-bottom: 1rem;
+}
+
+.prose-matrix a {
+	color: var(--color-matrix-green-bright);
+}
+
+.prose-matrix a:hover {
+	text-decoration: underline;
+}
+
+.prose-matrix code {
+	font-family: var(--font-mono);
+	background-color: var(--color-matrix-bg-secondary);
+	color: var(--color-matrix-green);
+	padding: 0.125rem 0.375rem;
+	border-radius: 0.25rem;
+	font-size: 0.875rem;
+}
+
+/* Shiki code blocks - vim style */
+.prose-matrix pre,
+.prose-matrix .shiki {
+	background-color: #1a1a1a !important;
+	border: 1px solid rgba(0, 255, 65, 0.3);
+	border-radius: 0.5rem;
+	padding: 1rem;
+	overflow-x: auto;
+	margin: 1rem 0;
+	font-family: var(--font-mono);
+	font-size: 0.9rem;
+	line-height: 1.6;
+}
+
+.prose-matrix pre code,
+.prose-matrix .shiki code {
+	background-color: transparent;
+	padding: 0;
+	font-family: inherit;
+}
+
+/* Vim-style line numbers */
+.prose-matrix .shiki code {
+	counter-reset: line;
+}
+
+.prose-matrix .shiki code .line::before {
+	counter-increment: line;
+	content: counter(line);
+	display: inline-block;
+	width: 2rem;
+	margin-right: 1rem;
+	text-align: right;
+	color: #4a4a4a;
+	border-right: 1px solid #333;
+	padding-right: 0.75rem;
+}
+
+/* Vim status bar style */
+.prose-matrix pre::after {
+	content: '-- NORMAL --';
+	display: block;
+	margin-top: 0.75rem;
+	padding-top: 0.5rem;
+	border-top: 1px solid #333;
+	color: var(--color-matrix-green-dim);
+	font-size: 0.75rem;
+	font-family: var(--font-mono);
+}
+
+.prose-matrix blockquote {
+	border-left: 4px solid var(--color-matrix-green-dim);
+	padding-left: 1rem;
+	font-style: italic;
+	opacity: 0.8;
+}
+
+.prose-matrix ul {
+	list-style-type: disc;
+	list-style-position: inside;
+	margin-bottom: 1rem;
+}
+
+.prose-matrix ol {
+	list-style-type: decimal;
+	list-style-position: inside;
+	margin-bottom: 1rem;
+}
+
+.prose-matrix img {
+	border-radius: 0.5rem;
+	border: 1px solid rgba(0, 255, 65, 0.2);
+	box-shadow: var(--shadow-matrix-glow-sm);
+	max-width: 600px;
+	max-height: 400px;
+	width: auto;
+	height: auto;
+	object-fit: contain;
+}
+
+.prose-matrix hr {
+	border-color: rgba(0, 255, 65, 0.3);
+	margin: 2rem 0;
+}
+
+/* File permission styling for ls output */
+.file-permissions {
+	color: var(--color-matrix-green-dim);
+	font-size: 0.875rem;
+}

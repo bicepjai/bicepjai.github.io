@@ -1,0 +1,42 @@
+{
+	"name": "bicepjai.com",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"format": "prettier --write .",
+		"lint": "prettier --check . && eslint .",
+		"lint:fix": "prettier --write . && eslint --fix .",
+		"check": "svelte-kit sync && svelte-check",
+		"code-quality": "npm run lint:fix && npm run check"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.39.2",
+		"@sveltejs/adapter-auto": "^7.0.0",
+		"@sveltejs/adapter-static": "^3.0.10",
+		"@sveltejs/kit": "^2.49.1",
+		"@sveltejs/vite-plugin-svelte": "^6.2.1",
+		"@tailwindcss/vite": "^4.1.18",
+		"autoprefixer": "^10.4.23",
+		"eslint": "^9.39.2",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-svelte": "^3.14.0",
+		"globals": "^17.0.0",
+		"mdsvex": "^0.12.6",
+		"postcss": "^8.5.6",
+		"prettier": "^3.7.4",
+		"prettier-plugin-svelte": "^3.4.1",
+		"prettier-plugin-tailwindcss": "^0.7.2",
+		"svelte": "^5.45.6",
+		"svelte-check": "^4.3.5",
+		"tailwindcss": "^4.1.18",
+		"vite": "^7.2.6"
+	},
+	"dependencies": {
+		"shiki": "^3.21.0"
+	}
+}
