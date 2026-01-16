@@ -5,28 +5,33 @@
 
 	const projects = [
 		{
-			name: 'ohgodmodels.xyz',
-			url: 'https://ohgodmodels.xyz/',
-			description:
-				'Philosophy meets machine learning. Exploring the deeper questions behind AI and the models we build.'
-		},
-		{
 			name: 'debugarguments.app',
 			url: 'https://debugarguments.app/',
 			description:
 				'Tools for debugging reasoning and arguments. Sharpen your thinking through structured analysis.'
 		},
 		{
-			name: 'tokenizing-lab',
-			url: 'https://tokenizing-lab.debugarguments.app/',
+			name: 'ohgodmodels.xyz',
+			url: 'https://ohgodmodels.xyz/',
 			description:
-				'Explore how text becomes tokens. Visualize BPE, WordPiece, and other tokenization algorithms in action.'
+				"Let's explore deeper questions behind AI and the models we build philosophically"
+		},
+		{
+			name: 'tokenizing-lab',
+			url: 'https://tokenizing-lab.bicepjai.com/',
+			description:
+				'Explore and visualize evolution of tokenization algorithms and understand how text becomes tokens.'
 		},
 		{
 			name: 'positional-encoding-lab',
-			url: 'https://positional-encoding-lab.debugarguments.app/',
+			url: 'https://positional-encoding-lab.bicepjai.com/',
 			description:
-				'Interactive visualizations for understanding positional encodings. See how transformers know where tokens are.'
+				'Explore and visualize evolution of positional encodings that help transformers know where tokens are.'
+		},
+		{
+			name: 'llm-evaluation-lab',
+			url: 'https://llm-evaluation-lab.bicepjai.com/',
+			description: 'Interactive access for looking at samples of benchmark datasets.'
 		}
 	];
 </script>
