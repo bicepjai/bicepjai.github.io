@@ -28,6 +28,7 @@
 			At my core, I'm a firm believer that knowledge is the ultimate virtue, empowering curiosity
 			and growth in every pursuit.
 		</p>
+		<p>LLMs are part of my toolkit, but my writing remains authentically mine.</p>
 
 		<h2>Connect</h2>
 		<p>
