@@ -1,3 +1,3 @@
 [submodule "my-blog-posts"]
 	path = my-blog-posts
-	url = git@github.com:bicepjai/my-blog-posts.git
+	url = https://github.com/bicepjai/my-blog-posts.git
