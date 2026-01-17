@@ -3,7 +3,7 @@
  * @returns {Promise<Array<{slug: string, title: string, date: string, description: string, categories: string[]}>>}
  */
 export async function getPosts() {
-	const modules = import.meta.glob('/src/posts/*.md', { eager: true });
+	const modules = import.meta.glob('/my-blog-posts/posts/*.md', { eager: true });
 
 	const posts = [];
 

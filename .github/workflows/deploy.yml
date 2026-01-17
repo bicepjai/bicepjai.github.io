@@ -3,6 +3,9 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: 'main'
+  workflow_dispatch:
+  repository_dispatch:
+    types: [blog-content-updated]
 
 jobs:
   build_site:
@@ -10,6 +13,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          submodules: true
+          token: ${{ secrets.PRIVATE_CONTENT_TOKEN }}
 
       - name: Install Node.js
         uses: actions/setup-node@v4
